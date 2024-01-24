@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceq3smtcgvwtg"
+path="res://.godot/imported/The Ink Spots - It's All Over But The Crying _ Fallout 4 _ SonoraGamers.mp3-a8abba6f2f1d6b3b1ce105a8f55d336c.mp3str"
+
+[deps]
+
+source_file="res://Player/Sound/The Ink Spots - It's All Over But The Crying _ Fallout 4 _ SonoraGamers.mp3"
+dest_files=["res://.godot/imported/The Ink Spots - It's All Over But The Crying _ Fallout 4 _ SonoraGamers.mp3-a8abba6f2f1d6b3b1ce105a8f55d336c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

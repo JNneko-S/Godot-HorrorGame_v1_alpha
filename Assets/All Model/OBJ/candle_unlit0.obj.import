@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ciskn67rh2agk"
+path="res://.godot/imported/candle_unlit0.obj-80301306fcaf14a5dbcde9db0e863b99.mesh"
+
+[deps]
+
+files=["res://.godot/imported/candle_unlit0.obj-80301306fcaf14a5dbcde9db0e863b99.mesh"]
+
+source_file="res://Assets/All Model/OBJ/candle_unlit0.obj"
+dest_files=["res://.godot/imported/candle_unlit0.obj-80301306fcaf14a5dbcde9db0e863b99.mesh", "res://.godot/imported/candle_unlit0.obj-80301306fcaf14a5dbcde9db0e863b99.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,143 @@
+[gd_scene load_steps=28 format=3 uid="uid://cosk2ckwp4iap"]
+
+[ext_resource type="ArrayMesh" uid="uid://baur17i4j8odr" path="res://Assets/All Model/OBJ/banister.obj" id="1_ul02o"]
+[ext_resource type="ArrayMesh" uid="uid://dmtqlgwme2nkt" path="res://Assets/All Model/OBJ/banisterbase.obj" id="2_ytnte"]
+[ext_resource type="ArrayMesh" uid="uid://csmtgjsqkhuri" path="res://Assets/All Model/OBJ/bed.obj" id="3_vi732"]
+[ext_resource type="ArrayMesh" uid="uid://crrxd78i45hi0" path="res://Assets/All Model/OBJ/book0.obj" id="4_hvp17"]
+[ext_resource type="ArrayMesh" uid="uid://1b4agv65ugv1" path="res://Assets/All Model/OBJ/candle0.obj" id="5_38lmt"]
+[ext_resource type="ArrayMesh" uid="uid://dc8lwnvjnk8mk" path="res://Assets/All Model/OBJ/candle_holder.obj" id="6_h7nlg"]
+[ext_resource type="ArrayMesh" uid="uid://ciskn67rh2agk" path="res://Assets/All Model/OBJ/candle_unlit0.obj" id="7_0dbf8"]
+[ext_resource type="ArrayMesh" uid="uid://cm6x21oj0vbeb" path="res://Assets/All Model/OBJ/ceiling0.obj" id="8_5qahf"]
+[ext_resource type="ArrayMesh" uid="uid://cs78ian55q16j" path="res://Assets/All Model/OBJ/door.obj" id="9_g26a5"]
+[ext_resource type="ArrayMesh" uid="uid://dfsvffh8g1rra" path="res://Assets/All Model/OBJ/drawers.obj" id="10_lty8d"]
+[ext_resource type="ArrayMesh" uid="uid://ba7suqsw568xj" path="res://Assets/All Model/OBJ/mug.obj" id="11_187r3"]
+[ext_resource type="ArrayMesh" uid="uid://bv12grntxearr" path="res://Assets/All Model/OBJ/papers.obj" id="12_1ymj0"]
+[ext_resource type="ArrayMesh" uid="uid://b238q1cdrldqt" path="res://Assets/All Model/OBJ/picture8.obj" id="13_6dwgx"]
+[ext_resource type="ArrayMesh" uid="uid://b8afodbykn6ob" path="res://Assets/All Model/OBJ/pillar0.obj" id="14_dcx8o"]
+[ext_resource type="ArrayMesh" uid="uid://cavp3668otrpk" path="res://Assets/All Model/OBJ/pillar0_1-2.obj" id="15_1cisu"]
+[ext_resource type="ArrayMesh" uid="uid://cx6u665l4ne6d" path="res://Assets/All Model/OBJ/pillar0_1-4.obj" id="16_csm3p"]
+[ext_resource type="ArrayMesh" uid="uid://b432jvw60b1l2" path="res://Assets/All Model/OBJ/pillar0_3-4.obj" id="17_jcvji"]
+[ext_resource type="ArrayMesh" uid="uid://b3ordsra8mp5f" path="res://Assets/All Model/OBJ/plate.obj" id="18_uyd8n"]
+[ext_resource type="ArrayMesh" uid="uid://drastmvmnnm3f" path="res://Assets/All Model/OBJ/rubbish.obj" id="19_3j5v2"]
+[ext_resource type="ArrayMesh" uid="uid://b5o61nj0q4wip" path="res://Assets/All Model/OBJ/rug2.obj" id="20_ytgqy"]
+[ext_resource type="ArrayMesh" uid="uid://dbtfympogf3kc" path="res://Assets/All Model/OBJ/single_sofa.obj" id="21_wx085"]
+[ext_resource type="ArrayMesh" uid="uid://bbgf7wlyicjlq" path="res://Assets/All Model/OBJ/sink.obj" id="22_nbp86"]
+[ext_resource type="ArrayMesh" uid="uid://cmhu4chok0got" path="res://Assets/All Model/OBJ/stairs0.obj" id="23_ffcmv"]
+[ext_resource type="ArrayMesh" uid="uid://dds2eh2l40jv2" path="res://Assets/All Model/OBJ/table.obj" id="24_xfkbj"]
+[ext_resource type="ArrayMesh" uid="uid://cdmmmrff7atcs" path="res://Assets/All Model/OBJ/wall0.obj" id="25_6dtuy"]
+[ext_resource type="ArrayMesh" uid="uid://blhkvneh67lpu" path="res://Assets/All Model/OBJ/window_ray.obj" id="26_uy5b8"]
+[ext_resource type="ArrayMesh" uid="uid://usfrio7gf0go" path="res://Assets/All Model/OBJ/window_wall0.obj" id="27_t6pwy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Banister" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61725, 0, 0.341207)
+mesh = ExtResource("1_ul02o")
+
+[node name="Banisterbase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68873, 0, -0.0923985)
+mesh = ExtResource("2_ytnte")
+
+[node name="Bed" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97133, 0, 0.0959458)
+mesh = ExtResource("3_vi732")
+
+[node name="Book0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73135, 0, -1.82665)
+mesh = ExtResource("4_hvp17")
+
+[node name="Candle0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37068, 0, -1.84474)
+mesh = ExtResource("5_38lmt")
+
+[node name="CandleHolder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75244, 0, -2.8949)
+mesh = ExtResource("6_h7nlg")
+
+[node name="CandleUnlit0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48031, 0, -2.11571)
+mesh = ExtResource("7_0dbf8")
+
+[node name="Ceiling0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67008, 0, -3.5787)
+mesh = ExtResource("8_5qahf")
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50059, 0, 0.66789)
+mesh = ExtResource("9_g26a5")
+
+[node name="Drawers" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05137, 2.38419e-07, -3.08948)
+mesh = ExtResource("10_lty8d")
+
+[node name="Mug" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.282363, 0, -2.57366)
+mesh = ExtResource("11_187r3")
+
+[node name="Papers" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.728767, 0, -2.45226)
+mesh = ExtResource("12_1ymj0")
+
+[node name="Picture8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50168, 0, -2.96324)
+mesh = ExtResource("13_6dwgx")
+
+[node name="Pillar0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23101, 0, -3.95289)
+mesh = ExtResource("14_dcx8o")
+
+[node name="Pillar01-2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46195, -2.38419e-07, -3.84622)
+mesh = ExtResource("15_1cisu")
+
+[node name="Pillar01-4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17932, -2.38419e-07, -2.59627)
+mesh = ExtResource("16_csm3p")
+
+[node name="Pillar03-4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40035, 2.38419e-07, -2.72527)
+mesh = ExtResource("17_jcvji")
+
+[node name="Plate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.577983, 0, -4.16327)
+mesh = ExtResource("18_uyd8n")
+
+[node name="Rubbish" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.894909, 0, -10.4277)
+mesh = ExtResource("19_3j5v2")
+
+[node name="Rug2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85852, 0, -2.62308)
+mesh = ExtResource("20_ytgqy")
+
+[node name="SingleSofa" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585649, 0, -4.7969)
+mesh = ExtResource("21_wx085")
+
+[node name="Sink" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28883, 2.38419e-07, -4.11818)
+mesh = ExtResource("22_nbp86")
+
+[node name="Stairs0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41274, 0, -5.61991)
+mesh = ExtResource("23_ffcmv")
+
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46221, 0, -9.85762)
+mesh = ExtResource("24_xfkbj")
+
+[node name="Wall0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11796, 0, -8.0702)
+mesh = ExtResource("25_6dtuy")
+
+[node name="WindowRay" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.83381, 0, -10.1704)
+mesh = ExtResource("26_uy5b8")
+
+[node name="WindowWall0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.18, 2.38419e-07, -7.95226)
+mesh = ExtResource("27_t6pwy")
+
+[node name="Rug3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9108, 0, -5.61747)
+mesh = ExtResource("20_ytgqy")

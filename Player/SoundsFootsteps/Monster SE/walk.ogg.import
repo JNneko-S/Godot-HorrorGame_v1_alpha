@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjxcc73qikhlu"
+path="res://.godot/imported/walk.ogg-82cb487d03e21b721cb12e357578081f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Player/SoundsFootsteps/Monster SE/walk.ogg"
+dest_files=["res://.godot/imported/walk.ogg-82cb487d03e21b721cb12e357578081f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

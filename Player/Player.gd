@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var interact_cast = $Camera3D/InteractRayCast
 @onready var interact_rabel = $InteractLabel
 @onready var Crosshair = $Crosshair
+@onready var stamina = $TextureProgressBar
 
 #ここでマウスのセンサーを変数宣言
 var mouse_sens := 0.55
@@ -19,8 +20,6 @@ var direction
 var isRunning := false
 #プレイヤーの移動速度
 var speed := 2.1
-#スタミナ
-var stamina := 100
 #ジャンプ力
 var jump := 0.0
 #これは重力
@@ -28,6 +27,11 @@ const Gravity = 1.5
 var playFootStep := 5 #音を早く再生したいなら数値を低くする
 var distanceFootstep := 0.0
 
+var can_regen = false
+var time_to_wait = 2.5
+var s_timer = 0
+var can_start_stimer = true
+var staminaDeadzone = 3.0
 
 var _delta := 0.0
 var camBobSpeed := 10 #10
@@ -40,7 +44,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#プレイヤーの物体が見えなくなるようにする
 	$MeshInstance3D.visible = false
-
+	stamina.value = stamina.max_value
 
 func _input(event):
 	#カメラが動く
@@ -48,19 +52,78 @@ func _input(event):
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		camera.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
 	if Input.is_action_just_pressed("run"):
 		isRunning = true
+		
+	if Input.is_key_pressed(KEY_SHIFT):
+		if Input.is_key_pressed(KEY_W):
+			if stamina.value >= staminaDeadzone:
+				stamina.value -= staminaDeadzone
+			else:
+				stamina.value = 0
+			can_regen = false
+			
+		if Input.is_key_pressed(KEY_S):
+			if stamina.value >= staminaDeadzone:
+				stamina.value -= staminaDeadzone
+			else:
+				stamina.value = 0
+			can_regen = false
+			
+			
+		if Input.is_key_pressed(KEY_A):
+			if stamina.value >= staminaDeadzone:
+				stamina.value -= staminaDeadzone
+			else:
+				stamina.value = 0
+			can_regen = false
+			
+			
+		if Input.is_key_pressed(KEY_D):
+			if stamina.value >= staminaDeadzone:
+				stamina.value -= staminaDeadzone
+				
+			else:
+				stamina.value = 0
+			can_regen = false
+			
+		
 	if Input.is_action_just_released("run"):
 		isRunning = false
+		can_regen = true
+		s_timer = 0
+		
+	if stamina.value == 0:
+		isRunning = false
+		can_regen = true
+		s_timer = 0
 	
 	if Input.is_action_just_pressed("interact"):
 		var interacted = interact_cast.get_collider()
 		if interacted != null and interacted.is_in_group("Interactable") and interacted.has_method("action_use"):
 			interacted.action_use()
 
+func processStaminaBar(delta):
+	if can_regen == false && stamina.value != stamina.max_value or stamina.value == 0:
+		if can_start_stimer:
+			s_timer += delta
+			if s_timer >= time_to_wait:
+				can_regen = true
+				can_start_stimer = false
+				s_timer = 0
+	if stamina.value == stamina.max_value:
+		can_regen = false
+#
+	if can_regen == true:
+		stamina.value += staminaDeadzone
+		can_start_stimer = false
+		s_timer = 0
+
 #カメラで呼吸の動きを表す
 func _process(delta):
 	process_camBob(delta)
+	processStaminaBar(delta)
 	
 	if floorcast.is_colliding():
 		var walkingTerrain = floorcast.get_collider().get_parent()

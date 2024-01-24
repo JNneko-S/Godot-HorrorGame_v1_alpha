@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c30k612w3vlp1"]
+
+[ext_resource type="PackedScene" uid="uid://oa33kyyj0fx3" path="res://Enemy/Bakemono_animation.glb" id="1_jjq1b"]
+[ext_resource type="Script" path="res://tekito-/bakemono_animation.gd" id="2_853jc"]
+
+[node name="Bakemono_animation" instance=ExtResource("1_jjq1b")]
+script = ExtResource("2_853jc")
+
+[node name="Skeleton3D" parent="metarig" index="0"]
+bones/0/position = Vector3(0.0220653, 0.915498, -0.979784)
+bones/2/rotation = Quaternion(0.146182, -0.0750012, -0.0710114, 0.983851)
+bones/5/rotation = Quaternion(0.127591, 0.00377624, 0.018559, 0.991646)
+bones/7/rotation = Quaternion(0.236313, 0.107035, -0.144804, 0.954846)
+bones/11/rotation = Quaternion(-0.059182, 0.629037, -0.406274, 0.660115)
+bones/12/rotation = Quaternion(0.260194, -0.7115, 0.311275, 0.573738)
+bones/13/rotation = Quaternion(-0.417788, -0.0931323, -0.0519655, 0.902264)
+bones/14/rotation = Quaternion(-0.645774, -0.451227, -0.274344, 0.551458)
+bones/15/rotation = Quaternion(-0.0637617, -0.226876, 0.125222, 0.963733)
+bones/16/rotation = Quaternion(0.244852, -0.775063, -0.475103, 0.33705)
+bones/17/rotation = Quaternion(-0.0228747, 0.0811914, 0.0845289, 0.992844)
+bones/18/rotation = Quaternion(0.305904, 0.0840261, 0.0273011, 0.947954)
+bones/19/rotation = Quaternion(-0.909865, 0.337464, 0.199475, 0.135917)
+bones/20/rotation = Quaternion(-0.235504, -0.0954587, 0.00556786, 0.967158)
+bones/22/rotation = Quaternion(0.342184, 0.0135713, 0.0195107, 0.939333)
+bones/23/rotation = Quaternion(0.268156, -0.233943, 0.680021, 0.641042)
+bones/24/rotation = Quaternion(0.14528, 0.122101, 0.0824965, 0.978356)
+bones/25/rotation = Quaternion(-0.443224, 0.689324, 0.221075, 0.528688)
+bones/26/rotation = Quaternion(-0.0629687, 0.030984, 0.111431, 0.991291)
+bones/27/rotation = Quaternion(-0.469309, -0.348405, 0.00639233, 0.81137)
+bones/31/rotation = Quaternion(-0.0480616, -0.131175, -0.032736, 0.989652)
+bones/32/rotation = Quaternion(0.152528, 0.0203226, 0.0365331, 0.987415)
+bones/36/rotation = Quaternion(-0.217865, -0.0877926, 0.361123, 0.902451)
+bones/37/rotation = Quaternion(0.011294, 0.0508147, 0.0419826, 0.997761)
+bones/38/rotation = Quaternion(-0.000721359, 0.904735, -0.425841, 0.0106709)
+bones/41/rotation = Quaternion(-0.342185, 0.0658185, -0.363099, 0.864139)
+bones/43/rotation = Quaternion(-0.930647, 0.349846, -0.082531, 0.0684979)
+bones/44/rotation = Quaternion(0.618633, -0.289208, -0.0900527, 0.724943)
+bones/45/rotation = Quaternion(-0.101226, -0.0334944, -0.184603, 0.977013)
+bones/46/rotation = Quaternion(-0.00787892, -0.976704, -0.0605693, 0.205714)
+bones/47/rotation = Quaternion(0.317811, -0.895186, 0.0920625, 0.2986)
+bones/48/rotation = Quaternion(0.069523, 0.0917246, 0.586029, 0.802075)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Scare"
+speed_scale = 0.8

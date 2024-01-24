@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6oh1km6i05y"]
+
+[ext_resource type="Script" path="res://Interactable/area_transport_to_next_level.gd" id="1_aeqhs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mbms"]
+
+[node name="AreaTransportToNextLevel" type="Area3D"]
+script = ExtResource("1_aeqhs")
+pathToNextLevel = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8mbms")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

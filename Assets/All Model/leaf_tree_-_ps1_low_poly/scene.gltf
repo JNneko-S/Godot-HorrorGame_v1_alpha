@@ -1,0 +1,254 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 3987,
+      "max": [
+        3.329263925552368,
+        4.5933518409729,
+        3.9271349906921387
+      ],
+      "min": [
+        -4.694788455963135,
+        -2.802447557449341,
+        -4.3100199699401855
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 47844,
+      "componentType": 5126,
+      "count": 3987,
+      "max": [
+        0.9999566674232483,
+        0.9841638207435608,
+        0.9989135265350342
+      ],
+      "min": [
+        -0.9983065724372864,
+        -0.9997701048851013,
+        -0.9871902465820313
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 3987,
+      "max": [
+        1.0037111043930054,
+        0.9997339844703674
+      ],
+      "min": [
+        0.0018561985343694687,
+        -0.0031896275468170643
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 5085,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Wersaus33 (https://sketchfab.com/wersaus33)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/leaf-tree-ps1-low-poly-d799c08100974e1ba352fcd646cb0694",
+      "title": "Leaf Tree - PS1 Low Poly"
+    },
+    "generator": "Sketchfab-15.12.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 20340,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 31896,
+      "byteOffset": 20340,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 95688,
+      "byteOffset": 52236,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 147924,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ],
+  "images": [
+    {
+      "uri": "textures/Tree_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaCutoff": 0.00457144250344382,
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.0
+        }
+      },
+      "name": "Tree",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8211145618000169
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Plane.001_Tree_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "41b39142ca814ae4ab80aedae9b838f0.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        -94.30271721202935,
+        -72.35148577901916,
+        141.14999623513387,
+        0.0,
+        132.91111147517825,
+        -125.6624218896655,
+        24.385519810706512,
+        0.0,
+        86.56034969254547,
+        114.12833776693967,
+        116.33178479441665,
+        0.0,
+        -97.32160949707031,
+        995.3554077148438,
+        2.3395776748657227,
+        1.0
+      ],
+      "name": "Plane.001"
+    },
+    {
+      "mesh": 0,
+      "name": "Plane.001_Tree_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}

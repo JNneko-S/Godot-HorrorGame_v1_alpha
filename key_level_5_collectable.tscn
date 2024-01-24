@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://yeu74xdxb4kd"]
+
+[ext_resource type="PackedScene" uid="uid://dkdwotn23bmu4" path="res://Assets/model/key.glb" id="1_p45uu"]
+[ext_resource type="Script" path="res://key_level_5_collectable.gd" id="1_xr6yy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8kwor"]
+radius = 0.6
+
+[node name="KeyLevel5Collectable" type="Area3D"]
+script = ExtResource("1_xr6yy")
+
+[node name="key" parent="." instance=ExtResource("1_p45uu")]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("SphereShape3D_8kwor")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+light_color = Color(0.866667, 0.854902, 0.419608, 1)
+light_energy = 0.238
+omni_range = 1.6
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

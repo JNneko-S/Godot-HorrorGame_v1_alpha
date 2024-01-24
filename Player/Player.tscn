@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdiucgv0ejc7g"]
+[gd_scene load_steps=18 format=3 uid="uid://cdiucgv0ejc7g"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_ywcl7"]
+[ext_resource type="Script" path="res://tekito-/Player.gd" id="1_75jsf"]
 [ext_resource type="FontFile" uid="uid://coclfvq0t6lfr" path="res://Font/VCR_OSD_MONO.ttf" id="2_mu3tj"]
 [ext_resource type="Shader" path="res://Player/vhs.gdshader" id="3_fkwui"]
+[ext_resource type="Texture2D" uid="uid://ccfqiyxppiy6t" path="res://Player/Stamina_ProgressBar/569_20231104184534.png" id="3_xpgyu"]
+[ext_resource type="Texture2D" uid="uid://bu50k8vr6qr4i" path="res://Player/Stamina_ProgressBar/569_20231104184538.png" id="4_61ioi"]
 
 [sub_resource type="CapsuleShape3D" id="1"]
 
 [sub_resource type="CapsuleMesh" id="2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p1gnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r15dr"]
 line_spacing = 5.0
@@ -15,40 +19,235 @@ font_size = 10
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_32eyf"]
+line_spacing = 6.0
+font = ExtResource("2_mu3tj")
+font_size = 30
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ac2ky"]
 shader = ExtResource("3_fkwui")
-shader_parameter/shake = 0.015
-shader_parameter/noiseQuality = 163.0
+shader_parameter/shake = 0.0
+shader_parameter/noiseQuality = 50.6
 shader_parameter/noiseIntensity = 0.001
-shader_parameter/offsetIntensity = 0.018
-shader_parameter/colorOffsetIntensity = 0.1
+shader_parameter/offsetIntensity = 0.0124
+shader_parameter/colorOffsetIntensity = 0.335
 
-[node name="Player" type="CharacterBody3D"]
+[sub_resource type="Animation" id="Animation_7msdj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2w4ll"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpp61"]
+_data = {
+"RESET": SubResource("Animation_7msdj"),
+"fade_in": SubResource("Animation_2w4ll")
+}
+
+[sub_resource type="Animation" id="Animation_1llo0"]
+resource_name = "Crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollisionShape3D:shape:height")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 1.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.25, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera3D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.75, 0), Vector3(0, 0.25, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MeshInstance3D:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -5.96046e-08, 0), Vector3(0, -0.25, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MeshInstance3D:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 0.75, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vuja0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CollisionShape3D:shape:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.75, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -5.96046e-08, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MeshInstance3D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rtma"]
+_data = {
+"Crouch": SubResource("Animation_1llo0"),
+"RESET": SubResource("Animation_vuja0")
+}
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("Animationplayer", "CROUCH_SHAPECAST")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_ywcl7")
+script = ExtResource("1_75jsf")
+Animationplayer = NodePath("Control/Crouch")
+CROUCH_SPEED = 10.0
+CROUCH_SHAPECAST = NodePath("ShapeCast3D")
+TOGGLE_CROUCH = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0)
 shape = SubResource("1")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -1.50996e-07, 0, 1.50996e-07, -1, 0, -5.96046e-08, 0)
+cast_shadow = 0
+mesh = SubResource("2")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+fov = 70.0
 
 [node name="InteractRayCast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -5)
 collide_with_areas = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -5.96046e-08, 0)
-cast_shadow = 0
-mesh = SubResource("2")
 
 [node name="FloorDetectRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="PlayerFootstepSound" type="AudioStreamPlayer" parent="."]
 
-[node name="InteractLabel" type="Label" parent="."]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("SphereShape3D_p1gnl")
+target_position = Vector3(0, 0.5, 0)
+debug_shape_custom_color = Color(0.239216, 1, 0.290196, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractLabel" type="Label" parent="Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -62,23 +261,84 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
-text = "Interact"
 label_settings = SubResource("LabelSettings_r15dr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Crosshair" type="Polygon2D" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -23.0
+offset_right = 457.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.319999, 0.28)
+max_value = 1000.0
+texture_under = ExtResource("3_xpgyu")
+texture_progress = ExtResource("4_61ioi")
+
+[node name="Label" type="Label" parent="Control/TextureProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.11
+anchor_top = 0.405
+anchor_right = -0.11
+anchor_bottom = 0.405
+offset_left = 63.555
+offset_top = -75.9199
+offset_right = 224.555
+offset_bottom = -36.9199
+scale = Vector2(1, 1.11429)
+text = "Stamina"
+label_settings = SubResource("LabelSettings_32eyf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crosshair" type="Polygon2D" parent="Control"]
 position = Vector2(42, 21)
 scale = Vector2(0.805029, 0.823205)
 polygon = PackedVector2Array(212, 119, 210, 121, 212, 123, 214, 121)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Control"]
 material = SubResource("ShaderMaterial_ac2ky")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.999998, 1)
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Fade_in" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../Fade_in")
+libraries = {
+"": SubResource("AnimationLibrary_vpp61")
+}
+autoplay = "fade_in"
+
+[node name="Crouch" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_5rtma")
+}
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[connection signal="animation_started" from="Control/Crouch" to="." method="_on_crouch_animation_started"]

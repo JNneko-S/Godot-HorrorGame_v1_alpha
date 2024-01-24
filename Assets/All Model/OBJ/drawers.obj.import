@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfsvffh8g1rra"
+path="res://.godot/imported/drawers.obj-9966f3256afc697728a878fb8c42e810.mesh"
+
+[deps]
+
+files=["res://.godot/imported/drawers.obj-9966f3256afc697728a878fb8c42e810.mesh"]
+
+source_file="res://Assets/All Model/OBJ/drawers.obj"
+dest_files=["res://.godot/imported/drawers.obj-9966f3256afc697728a878fb8c42e810.mesh", "res://.godot/imported/drawers.obj-9966f3256afc697728a878fb8c42e810.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

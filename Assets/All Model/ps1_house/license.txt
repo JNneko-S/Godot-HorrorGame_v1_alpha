@@ -1,0 +1,11 @@
+Model Information:
+* title:	PS1 House
+* source:	https://sketchfab.com/3d-models/ps1-house-beae552a804f45ee94ce9e53c0e25c39
+* author:	Ub1k (https://sketchfab.com/ub1que)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PS1 House" (https://sketchfab.com/3d-models/ps1-house-beae552a804f45ee94ce9e53c0e25c39) by Ub1k (https://sketchfab.com/ub1que) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
