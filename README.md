@@ -1,7 +1,7 @@
 # Godot-HorrorGame
 初めてゲームエンジンで作った作品です。プロジェクトのバックアップ用です。
 
-![画像](https://drive.google.com/file/d/1zZfX2Wh7_ORYIJiY0_6vY50M4U9yLB52/view?usp=sharing)
+![画像](https://gyazo.com/97ac2342fdedc49fd4a298beefa34c4f)
 
 # PS1スタイルのホラーゲーム
 </n>自分が初めて作った3Dホラーゲームです。
